@@ -1,5 +1,4 @@
 aovbay <- function(dataset=FALSE) {
-
   require(shiny)
   require(highcharter)
   require(shinydashboard)
@@ -15,7 +14,6 @@ aovbay <- function(dataset=FALSE) {
   require(rstan)
   require(reshape)
   require(purrr)
-
   # dotR <- file.path(Sys.getenv("HOME"), ".R")
   # if (!file.exists(dotR)) dir.create(dotR)
   # MAKEVARS <- file.path(dotR, "Makevars")
@@ -28,11 +26,8 @@ aovbay <- function(dataset=FALSE) {
   #   file = MAKEVARS,
   #   sep = "\n",
   #   append = TRUE
-
   # )
   # Sys.setenv(R_MAKEVARS_USER = "/read-only/path/to/Makevars")
-
-
   #rt <- stanc(file='https://raw.githubusercontent.com/JavierRojasC/JavierRCam/master/oneway.stan')
   rt <- (stanc(model_code = stanmodels$modeloneway))
   sm <- stan_model(stanc_ret = rt, verbose=FALSE)
